@@ -4,6 +4,7 @@ import MysqlClient from './MysqlClient'
 import PostgresClient from './PostgresClient'
 import Sqlite3Client from './Sqlite3Client'
 import BigqueryClient from './BigqueryClient'
+import TeradataClient from './TeradataClient'
 
 export default function getDatabaseClient(
   settings: Connection
@@ -19,6 +20,8 @@ export default function getDatabaseClient(
       return new Sqlite3Client(settings)
     case 'bigquery':
       return new BigqueryClient(settings)
+    case 'teradatasql':
+      return new TeradataClient(settings)
     default:
       throw new Error(`not support ${settings.adapter}`)
   }

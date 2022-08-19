@@ -22,6 +22,7 @@ export type Connection = {
     | 'postgres'
     | 'sqlite3'
     | 'bigquery'
+    | 'teradatasql'
     | null
   host: string | null
   port: number | null
